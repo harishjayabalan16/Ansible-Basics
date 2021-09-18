@@ -1,0 +1,11 @@
+---
+- hosts: hostname
+  become: true
+
+  tasks:
+  - name: Installing a pkg..
+    yum:
+      name: apache2
+      state: absent
+      update_cache: true
+
