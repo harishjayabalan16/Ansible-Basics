@@ -1,0 +1,11 @@
+---
+- hosts: hostname
+  become: true
+
+  tasks:
+  - name: Create user accounts
+    user:
+      name: adminuser01
+      state: absent
+      shell: /bin/bash
+
