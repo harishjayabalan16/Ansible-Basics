@@ -1,5 +1,5 @@
 ---
-- hosts: rheldemo
+- hosts: host01
   become: true
   tasks:
     - name: Update Linux Patches
