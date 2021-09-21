@@ -1,5 +1,5 @@
 ---
-- hosts: ctsazevpmgmth01
+- hosts: host01
   become: true
   vars_files:
      - hem.txt
@@ -7,7 +7,7 @@
   tasks:
   - name: Install latest vsftpd on RHEL Servers
     yum:
-      name: eracent
+      name: vsftpd
       state: latest
 
 #  - name: enable and start vsftpd service
