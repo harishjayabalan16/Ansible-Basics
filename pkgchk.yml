@@ -1,5 +1,5 @@
 ---
-- hosts: etimsservers
+- hosts: host01
   become: true
   vars_files:
      - hem.txt
