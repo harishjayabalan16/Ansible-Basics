@@ -1,5 +1,5 @@
 ---
-- hosts: fssuat
+- hosts: host01
   become: yes
   vars_files:
       - hem.txt
