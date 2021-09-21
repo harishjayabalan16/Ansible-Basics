@@ -1,5 +1,5 @@
 ---
-- hosts: fssdev
+- hosts: host01
   become: true
   vars_files:
      - hem.txt
@@ -7,8 +7,8 @@
   tasks:
   - name: Creating user ID 
     user: 
-       name : enterprisedb
+       name : dbadmin
        state: present
        shell: /bin/bash
        createhome: yes
-       home: /home/enterprisedb
+       home: /home/dbadmin
