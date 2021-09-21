@@ -1,7 +1,7 @@
 ---
 - name: Set Password
-  hosts: ansible02
-  user: ctsadmin 
+  hosts: host01
+  user: azureadmin 
   become: yes
   ignore_errors: yes
   vars_files:
