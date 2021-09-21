@@ -1,0 +1,10 @@
+---
+- hosts: rheldemo
+  become: true
+  tasks:
+    - name: Update Linux Patches
+      yum:
+        name: "*"
+        state: latest
+        update_cache: yes
+

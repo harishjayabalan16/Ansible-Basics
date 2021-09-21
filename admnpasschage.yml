@@ -1,0 +1,19 @@
+---
+- name: Set Password
+  hosts: ansible02
+  user: ctsadmin 
+  become: yes
+  ignore_errors: yes
+  vars_files:
+     - hem.txt
+  vars_prompt:
+    - name: username
+      private: no
+      prompt: "Enter the user name"
+
+  tasks:
+   - name: Change Password for " username "
+     user:
+       name: "{{ username }}"
+       password: "$6$x0ConV0v$ySDCQ74G.KkVrvTstaAfijn2wUIgm65jdPWwlhhZdMFAgvgSu5eQns7q.69oWxc0W2/ycBXo/ammEXZctWrFf1"
+       update_password: always

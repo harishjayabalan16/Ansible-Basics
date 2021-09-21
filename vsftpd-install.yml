@@ -1,0 +1,24 @@
+---
+- hosts: ctsazevpmgmth01
+  become: true
+  vars_files:
+     - hem.txt
+
+  tasks:
+  - name: Install latest vsftpd on RHEL Servers
+    yum:
+      name: eracent
+      state: latest
+
+#  - name: enable and start vsftpd service
+#    service:
+#       name: vsftpd
+#       enabled: yes
+#       state: started
+
+#  - name: copy the configuration file for yum_repo
+#    copy:
+#       src: rhel.repo
+#       dest: /etc/yum.repos.d
+#       mode: 0644
+

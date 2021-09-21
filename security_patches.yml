@@ -1,0 +1,17 @@
+---
+- hosts: fssuat
+  become: yes
+  vars_files:
+      - hem.txt
+
+  tasks:
+    - name: install bugfix...
+      yum: name=microcode_ctl state=latest
+
+    - name: Check BugFix Advisory...
+      command: rpm -qa | grep -i microcode_ctl
+      register: response
+
+    - debug: msg="{{ response.stdout }}"
+ 
+

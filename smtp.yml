@@ -1,0 +1,22 @@
+---
+- hosts: ansible01
+  become: yes
+  vars_files:
+     - hem.txt
+
+  tasks:
+  - name: Installaing mailx & postfix....
+    yum:
+      name: ['mailx', 'postfix']
+      state: latest
+
+  - name: Configure SMTP Relay IP in main.conf....
+    lineinfile:
+      path: /etc/postfix/main.cf
+      regexp: '^#relayhost = [an.ip.add.ress]'
+      line: 'relayhost = 63.101.151.1'
+  
+  - name: Restart postfix.....
+    service: name=postfix state=restarted enabled=yes
+
+

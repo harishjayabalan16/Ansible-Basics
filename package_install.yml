@@ -1,0 +1,11 @@
+---
+- hosts: ansible01
+  become: yes
+  vars_files:
+     - hem.txt
+      
+  tasks:
+  - name: Installing the packages for RHUI....
+    yum:
+      name: apache*
+      state: latest

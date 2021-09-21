@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+  vars_files:
+     - hem.txt
+
+  tasks:
+  - name: install the latest version ntp package
+    yum:
+      name: ntp
+      state: latest
+
+  - name: enable and start ntp service
+    service:
+       name: ntpd
+       enabled: yes
+       state: started

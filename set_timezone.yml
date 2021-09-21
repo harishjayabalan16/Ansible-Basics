@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: true
+  vars_files:
+     - hem.txt
+  tasks:
+    - name: set timezone
+      timezone:
+        name: "{{ timezz }}"
+
+      vars:
+              timezz: "America/New_York"

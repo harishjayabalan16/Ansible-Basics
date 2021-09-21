@@ -1,0 +1,10 @@
+---
+- hosts: etimsservers
+  become: true
+  vars_files:
+     - hem.txt
+  tasks:
+    - name: check if Nessusagent is installed
+      yum:
+        list=NessusAgent-7.1.0-es7
+      register: rpm
